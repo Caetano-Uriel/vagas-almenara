@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas de Emprego - Almenara</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header>
+      <h1>Vagas de Emprego em Almenara</h1>
+      <a href="cadastro.html" class="btn">Cadastrar Vaga</a>
+    </header>
+
+    <!-- Filtros de Busca -->
+    <section class="filtros">
+      <label for="area">Área</label>
+      <select id="area">
+        <option value="">Selecione</option>
+        <option value="vendas">Vendas</option>
+        <option value="tecnologia">Tecnologia</option>
+        <option value="administrativo">Administrativo</option>
+        <option value="saude">Saúde</option>
+      </select>
+
+      <label for="tipo">Tipo de Emprego</label>
+      <select id="tipo">
+        <option value="">Selecione</option>
+        <option value="tempo integral">Tempo Integral</option>
+        <option value="meio expediente">Meio Expediente</option>
+        <option value="freelancer">Freelancer</option>
+      </select>
+
+      <button onclick="filtrarVagas()">Filtrar</button>
+    </section>
+
+    <!-- Lista de Vagas -->
+    <section class="vagas">
+      <h2>Vagas Disponíveis</h2>
+      <ul id="vagasList">
+        <!-- As vagas cadastradas aparecerão aqui -->
+      </ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Resetando margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header .btn {
+  background-color: #28a745; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+header .btn:hover {
+  background-color: #218838; /* Tom de verde mais escuro */
+  transform: scale(1.05); /* Efeito de aumento */
+}
+
+
+h1, h2 {
+  color: #23b31b;
+}
+
+label {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #23b31b;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button#voltar{
+  width: 10%;
+}
+
+button:hover {
+  background-color: #23b31b;
+}
+
+/* Estilo para a lista de vagas */
+.vagas ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.vagas li {
+  background-color: #f0f0f0;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 5px solid #23b31b;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Vagas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Cadastro de Vagas</h1>
+      </header>
+
+      <section class="formulario">
+        <form id="vagaForm">
+          <label for="nome">Nome da Vaga</label>
+          <input
+            type="text"
+            id="nome"
+            placeholder="Nome da Vaga"
+            required
+          /><br />
+
+          <label for="descricao">Descrição</label>
+          <input
+            type="text"
+            id="descricao"
+            placeholder="Descrição"
+            required
+          /><br />
+
+          <label for="area">Área</label>
+          <select id="area" required>
+            <option value="vendas">Vendas</option>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="administrativo">Administrativo</option>
+            <option value="saude">Saúde</option></select
+          ><br />
+
+          <label for="tipo">Tipo de Emprego</label>
+          <select id="tipo" required>
+            <option value="tempo integral">Tempo Integral</option>
+            <option value="meio expediente">Meio Expediente</option>
+            <option value="freelancer">Freelancer</option></select
+          ><br />
+
+          <label for="contato">Contato</label>
+          <input
+            type="text"
+            id="contato"
+            placeholder="Contato"
+            required
+          /><br />
+
+          <button type="submit">Cadastrar Vaga</button>
+
+          <button type="button" id="voltar">Voltar</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
