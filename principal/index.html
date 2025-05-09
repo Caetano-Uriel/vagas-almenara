@@ -1,60 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vagas de Emprego - Almenara</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <!-- Cabeçalho -->
-    <header>
-      <h1>Vagas de Emprego em Almenara</h1>
-    </header>
-    <nav class="navbar">
-  <div class="navbar-container">
-    <ul class="navbar-menu">
-      <li><a href="/candidato/index.html">Cadastrar candidato</a></li>
-    </ul>
-  </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vagas de Emprego - Almenara</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Cabeçalho -->
+      <header>
+        <h1>Vagas de Emprego em Almenara</h1>
+      </header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <ul class="navbar-menu">
+            <li><a href="/candidato/index.html">Cadastrar candidato</a></li>
+          </ul>
+        </div>
+      </nav>
 
-    <!-- Filtros de Busca -->
-    <section class="filtros">
-      <label for="area">Área</label>
-      <select id="area">
-        <option value="">Selecione</option>
-        <option value="vendas">Vendas</option>
-        <option value="tecnologia">Tecnologia</option>
-        <option value="administrativo">Administrativo</option>
-        <option value="saude">Saúde</option>
-      </select>
+      <!-- Filtros de Busca -->
+      <section class="filtros">
+        <label for="area">Área</label>
+        <select id="area">
+          <option value="">Selecione</option>
+          <option value="vendas">Vendas</option>
+          <option value="tecnologia">Tecnologia</option>
+          <option value="administrativo">Administrativo</option>
+          <option value="saude">Saúde</option>
+        </select>
 
-      <label for="tipo">Tipo de Emprego</label>
-      <select id="tipo">
-        <option value="">Selecione</option>
-        <option value="tempo integral">Tempo Integral</option>
-        <option value="meio expediente">Meio Expediente</option>
-        <option value="freelancer">Freelancer</option>
-      </select>
+        <label for="tipo">Tipo de Emprego</label>
+        <select id="tipo">
+          <option value="">Selecione</option>
+          <option value="tempo integral">Tempo Integral</option>
+          <option value="meio expediente">Meio Expediente</option>
+          <option value="freelancer">Freelancer</option>
+        </select>
 
-      <button onclick="filtrarVagas()">Filtrar</button>
-    </section>
+        <button onclick="filtrarVagas()">Filtrar</button>
+      </section>
 
-    <!-- Lista de Vagas -->
-    <section class="vagas">
-      <h2>Vagas Disponíveis</h2>
-      <ul id="vagasList">
-        <!-- As vagas cadastradas aparecerão aqui -->
-      </ul>
-    </section>
-  </div>
+      <!-- Lista de Vagas -->
+      <section class="vagas">
+        <h2>Vagas Disponíveis</h2>
+        <ul id="vagasList">
+          <!-- As vagas cadastradas aparecerão aqui -->
+        </ul>
+      </section>
+    </div>
 
-  <script src="script.js"></script>
-</body>
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div id="modalCandidatura" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h2>Candidatar-se à vaga: <span id="vagaSelecionada"></span></h2>
+        <form id="formCandidatura">
+          <label>
+            <input type="checkbox" name="confirmarEnvio" /> Confirmo o envio do
+            meu currículo anexado
+          </label>
+          <p>Ou envie um novo currículo:</p>
+          <input type="file" name="curriculo" />
+          <input
+            type="text"
+            name="nome"
+            placeholder="Seu nome completo"
+            required
+          />
+          <input
+            type="text"
+            name="telefone"
+            placeholder="Seu telefone"
+            required
+          />
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+          <button type="submit">Enviar Candidatura</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
 
- <!-- 1- Adicionar uma navbar para fazer o login (talvez nem precise da navbar só uma ideia msm).
+<!-- 1- Adicionar uma navbar para fazer o login (talvez nem precise da navbar só uma ideia msm).
   2- Minha ideia foi que o administrador vai ter acesso aos cadastros das vagas e candidatos podendo editar e deletar,
   e a parte de vagas e login/registrar vai ser o que será mostrado para os "clientes" -->

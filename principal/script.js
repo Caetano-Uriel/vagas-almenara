@@ -18,13 +18,15 @@ function renderVagas(lista) {
     const li = document.createElement('li');
     li.classList.add('vaga');
     li.innerHTML = `
-      <h3>Vaga: ${vaga.nome}</h3>
-      <p>Quantidade de Vagas: ${vaga.quantidade}</p>
-      <p>Descrição: ${vaga.descricao}</p>
-      <p>Área: ${vaga.area}</p>
-      <p>Tipo: ${vaga.tipo}</p>
-      <p>Contato: ${vaga.contato}</p>
-    `;
+  <h3>Vaga: ${vaga.nome}</h3>
+  <p>Quantidade de Vagas: ${vaga.quantidade}</p>
+  <p>Descrição: ${vaga.descricao}</p>
+  <p>Área: ${vaga.area}</p>
+  <p>Tipo: ${vaga.tipo}</p>
+  <p>Contato: ${vaga.contato}</p>
+  <button class="btn-candidatar" onclick="abrirModal('${vaga.nome}')">Candidatar-se</button>
+`;
+
     vagasList.appendChild(li);
   });
 }
@@ -43,13 +45,17 @@ function filtrarVagas() {
 }
 
 // Abrir e fechar modal
-document.getElementById('abrirModal').addEventListener('click', () => {
-  document.getElementById('modalFiltros').style.display = 'block';
-});
+function abrirModal(vagaNome) {
+  document.getElementById('modalCandidatura').style.display = 'block';
+  document.getElementById('modalOverlay').style.display = 'block';
+  document.getElementById('vagaSelecionada').innerText = vagaNome;
+}
 
-document.getElementById('fecharModal').addEventListener('click', () => {
-  document.getElementById('modalFiltros').style.display = 'none';
-});
+function fecharModal() {
+  document.getElementById('modalCandidatura').style.display = 'none';
+  document.getElementById('modalOverlay').style.display = 'none';
+}
+
 
 // Aplicar filtros
 function aplicarFiltro() {
@@ -64,3 +70,18 @@ function aplicarFiltro() {
   renderVagas(vagasFiltradas);
   document.getElementById('modalFiltros').style.display = 'none';
 }
+function abrirModal(vagaNome) {
+  document.getElementById('modalCandidatura').style.display = 'block';
+  document.getElementById('vagaSelecionada').innerText = vagaNome;
+}
+
+function fecharModal() {
+  document.getElementById('modalCandidatura').style.display = 'none';
+  document.getElementById('formCandidatura').reset();
+}
+
+document.getElementById('formCandidatura').addEventListener('submit', function (e) {
+  e.preventDefault();
+  alert('Candidatura enviada com sucesso!');
+  fecharModal();
+});
