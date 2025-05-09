@@ -1,0 +1,1 @@
+let vagas = JSON.parse(localStorage.getItem('vagas')) || [];
