@@ -115,3 +115,34 @@ button:hover {
 .navbar-menu li a:hover {
   color: #000000;
 }
+
+
+
+
+#vagasList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#vagasList li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+#vagasList li {
+  padding: 1rem 0;
+  border-bottom: 2px dashed #999;
+}
+#vagasList li:last-child {
+  border-bottom: none;
+}
+#vagasList li h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #082b06;
+}
+#vagasList li p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+} 
+
