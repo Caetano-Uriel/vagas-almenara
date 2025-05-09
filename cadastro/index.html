@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <nav class="navbar">
+  <div class="navbar-container">
+    <h2 class="logo">Painel do Administrador</h2>
+    <ul class="navbar-menu">
+      <li><a href="/principal/index.html">Vagas</a></li>
+      <li><a href="/candidato/index.html">candidatos</a></li>
+      <li><a href="/principal/Painel.html">Painel</a></li>
+    </ul>
+  </div>
+  </nav>
+
     <div class="container">
       <header>
         <h1>Cadastro de Vagas</h1>
@@ -19,6 +31,14 @@
             type="text"
             id="nome"
             placeholder="Nome da Vaga"
+            required
+          /><br />
+
+          <label for="quantidade">Quantidade de Vagas</label> 
+          <input
+            type="number"
+            id="quantidade"
+            placeholder="Quantidade de Vagas"
             required
           /><br />
 
@@ -55,7 +75,8 @@
 
           <button type="submit">Cadastrar Vaga</button>
 
-          <button type="button" id="voltar">Voltar</button>
+          <a href="/principal/index.html" class="btn">voltar</a>
+          
         </form>
       </section>
     </div>

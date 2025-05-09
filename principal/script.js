@@ -19,6 +19,7 @@ function renderVagas(lista) {
     li.classList.add('vaga');
     li.innerHTML = `
       <h3>Vaga: ${vaga.nome}</h3>
+      <p>Quantidade de Vagas: ${vaga.quantidade}</p>
       <p>Descrição: ${vaga.descricao}</p>
       <p>Área: ${vaga.area}</p>
       <p>Tipo: ${vaga.tipo}</p>
@@ -39,4 +40,27 @@ function filtrarVagas() {
   });
 
   renderVagas(filtradas);
+}
+
+// Abrir e fechar modal
+document.getElementById('abrirModal').addEventListener('click', () => {
+  document.getElementById('modalFiltros').style.display = 'block';
+});
+
+document.getElementById('fecharModal').addEventListener('click', () => {
+  document.getElementById('modalFiltros').style.display = 'none';
+});
+
+// Aplicar filtros
+function aplicarFiltro() {
+  const area = document.getElementById('filtroArea').value.toLowerCase();
+  const tipo = document.getElementById('filtroTipo').value.toLowerCase();
+
+  const vagasFiltradas = vagas.filter(vaga => {
+    return (!area || vaga.area.toLowerCase().includes(area)) &&
+           (!tipo || vaga.tipo.toLowerCase().includes(tipo));
+  });
+
+  renderVagas(vagasFiltradas);
+  document.getElementById('modalFiltros').style.display = 'none';
 }

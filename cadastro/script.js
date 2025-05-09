@@ -7,6 +7,7 @@ if (form) {
 
     const novaVaga = {
       nome: document.getElementById('nome').value,
+      quantidade: document.getElementById("quantidade").value,
       descricao: document.getElementById('descricao').value,
       area: document.getElementById('area').value,
       tipo: document.getElementById('tipo').value,

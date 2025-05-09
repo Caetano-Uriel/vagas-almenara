@@ -1,3 +1,10 @@
+/* Resetando margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Estilo geral da página */
 body {
   font-family: Arial, sans-serif;
@@ -68,25 +75,40 @@ button#voltar{
 button:hover {
   background-color: #23b31b;
 }
-/* Resetando margens e paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* Estilo para os botões de ação em cada vaga */
+.vaga button {
+  width: auto;
+  padding: 8px 16px;
+  margin-right: 10px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.btn {
-  background-color: #23b31b; /* Verde */
+/* Botão Editar */
+.vaga button.editar {
+  background-color: #007bff; /* Azul */
   color: white;
-  padding: 10px 30px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  display: inline-block;
-  margin-top: 15px;
-  transition: all 0.3s ease;
+  border: none;
 }
 
+.vaga button.editar:hover {
+  background-color: #0069d9;
+  transform: scale(1.05);
+}
+
+/* Botão Excluir */
+.vaga button.excluir {
+  background-color: #dc3545; /* Vermelho */
+  color: white;
+  border: none;
+}
+
+.vaga button.excluir:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
 
 /* Navbar */
 .navbar {
