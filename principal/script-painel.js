@@ -4,7 +4,10 @@ const vagasPendentesList = document.getElementById('vagasPendentesList');
 if (vagasPendentesList) {
   renderVagas(vagas);
 
-  document.querySelector('button[onclick="filtrarVagas()"]').addEventListener('click', filtrarVagas);
+  const filtrarButton = document.querySelector('button[onclick="filtrarVagas()"]');
+  if (filtrarButton) {
+    filtrarButton.addEventListener('click', filtrarVagas);
+  }
 }
 
 // Função para renderizar a lista de vagas
